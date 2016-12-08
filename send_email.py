@@ -10,20 +10,16 @@ client = boto3.client('ses')
 
 def send_email():
     response = client.send_email(
-        Source='salk.onur@gmail.com',
+        Source='from@gmail.com',
         Destination={
             'ToAddresses': [
-                'salk.onur@gmail.com',
+                'to@gmail.com',
             ]
         },
         Message={
             'Subject': {
                 'Data': 'Alert'
             },
-            'Body': {
-                'Text': {
-                    'Data': "s3://' + bucket + '/' + key_name'"
-                },
                 'Html': {
                     'Data': data
                 }
